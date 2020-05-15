@@ -14,3 +14,17 @@ Channel status and changes are performed using a different protocol that isn't d
 
 The tool here will do the initial pairing. The credentials can then be used in a standard way
 (digest) in other tools.
+
+# Usage
+python -m pip install -r requirements.txt
+python philips.py --host 192.168.xx.xx pair 
+
+# Configuring Home Assistant / HASSIO
+media_player:
+  - platform: philips_android_tv
+    host: <IP of TV>
+    name: "TV stua"
+    mac: <mac of TV>
+    username: <username from script>
+    password: <password from script>
+    favorite_channels_only: true
